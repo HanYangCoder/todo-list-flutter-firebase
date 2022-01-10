@@ -15,7 +15,8 @@ class CustomRaisedButton extends StatelessWidget {
       ),
       child: Text(textLabel),
       onPressed: onPressedExecution,
-      color: Colors.lightBlueAccent,
+      color: Color(0xFFe6a8ba),
+      textColor: Colors.black,
     );
   }
 }

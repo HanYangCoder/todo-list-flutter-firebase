@@ -17,6 +17,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: TextStyle(color: Colors.black),
       controller: editingController,
       obscureText: isObscure,
       textAlign: TextAlign.start,
@@ -30,8 +31,9 @@ class CustomTextField extends StatelessWidget {
           ),
         ),
         labelText: labelText,
+        labelStyle: TextStyle(color: Colors.black),
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        fillColor: Colors.black,
+        fillColor: Colors.white70,
         filled: true,
         contentPadding: EdgeInsets.all(14),
       ),

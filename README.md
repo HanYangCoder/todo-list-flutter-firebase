@@ -1,6 +1,10 @@
 #  Todo application
 
-In progress classic Todo application using flutter with firebase as the backend
+A fork of a classic Todo application using flutter with firebase as the backend
+
+Note for this fork:
+- The app had a couple of UI changes introduced to have a different look and feel
+- What you're seeing below is the original look of tha app, running it will get different results
 
 ### Firebase Authentication
 

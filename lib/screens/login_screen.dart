@@ -25,8 +25,10 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFf5d793),// RD's Update
       appBar: AppBar(
-        title: Text("Login"),
+        backgroundColor: Colors.transparent,// RD's Update
+        elevation: 0,// RD's Update
       ),
       body: Form(
         key: _formKey,
@@ -35,7 +37,14 @@ class _LoginScreenState extends State<LoginScreen> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: <Widget>[
+                Container(
+                  height: 600,
+                  child: Image(
+                    image: AssetImage("images/todologin.png"),// RD's Update
+                    fit: BoxFit.contain,
+                  ),
+                ),
                 CustomTextField(
                   editingController: _emailController,
                   isObscure: false,
@@ -43,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   textFieldValidator: emailValidation,
                 ),
                 SizedBox(
-                  height: 15,
+                  height: 20,
                 ),
                 CustomTextField(
                   editingController: _passwordController,
@@ -65,10 +74,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 Text.rich(
                   TextSpan(
+                    style: TextStyle(color: Colors.black),// RD's Update
                     text: "Don't have an account ? ",
                     children: [
                       TextSpan(
-                        text: 'Signup',
+                        text: 'Sign up',
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
                             Navigator.push(
@@ -80,7 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             );
                           },
                         style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                            fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
                       ),
                     ],
                   ),

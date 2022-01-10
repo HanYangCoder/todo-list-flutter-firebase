@@ -29,7 +29,9 @@ class _TodoListScreenState extends State<TodoListScreen> {
       child: WillPopScope(
         onWillPop: onWillPop,
         child: Scaffold(
+          backgroundColor: Color(0xFFf5d793),
           appBar: AppBar(
+            backgroundColor: Colors.transparent,
             title: Text("Todo list"),
             actions: [
               IconButton(
@@ -53,7 +55,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
           ),
           body: getTodoListBody(context),
           floatingActionButton: FloatingActionButton.extended(
-            backgroundColor: Colors.blue,
+            backgroundColor: Color(0xFFe6a8ba),// RD's Update
             label: Text("Add Todo"),
             icon: Icon(Icons.add),
             onPressed: () {
@@ -80,14 +82,14 @@ class _TodoListScreenState extends State<TodoListScreen> {
           child = Center(
             child: Text(
               'Something went wrong',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white),// RD's Update
             ),
           );
         } else if (snapshot.connectionState == ConnectionState.waiting) {
           child = Center(
             child: Text(
               "Loading",
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),// RD's Update
             ),
           );
         } else if (snapshot.data.size == 0) {
@@ -130,7 +132,9 @@ class _TodoListScreenState extends State<TodoListScreen> {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 5),
                     child: Card(
+                      color: Color(0xFFe6a8ba),// RD's Update
                       child: ExpansionTile(
+                        backgroundColor: Color(0xFFe6a8ba),// RD's Update
                         initiallyExpanded: index == selectedExpansionTile,
                         onExpansionChanged: ((newState) {
                           if (newState)
@@ -145,7 +149,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
                         leading: Icon(Icons.fiber_manual_record),
                         title: Text(
                           todo.todoTitle,
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.black),
                           maxLines: 2,
                         ),
                         children: todo.taskList
@@ -153,6 +157,8 @@ class _TodoListScreenState extends State<TodoListScreen> {
                             .entries
                             .map(
                               (task) => CheckboxListTile(
+                                checkColor: Colors.green,
+                                tileColor: Colors.black,
                                 contentPadding: EdgeInsets.only(left: 30),
                                 value: task.value.status,
                                 title: Text(task.value.taskDescription),

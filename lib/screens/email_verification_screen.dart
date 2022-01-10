@@ -50,10 +50,12 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                   children: [
                     TextSpan(
                       text: "${AuthService.user.email}",
-                      style: TextStyle(color: Colors.lightBlueAccent),
+                      style: TextStyle(color: Colors.indigo),
                     ),
                     TextSpan(text: " please click on the link to verify it.")
                   ]),
+                  style: TextStyle(
+                    color: Colors.black),
             )
           ],
         ),

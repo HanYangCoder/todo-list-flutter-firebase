@@ -22,8 +22,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFf5d793),// RD's Update
       appBar: AppBar(
-        title: Text("Register"),
+        backgroundColor: Colors.transparent,// RD's Update
+        elevation: 0,// RD's Update
       ),
       body: Form(
         key: _formKey,
@@ -32,7 +34,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: <Widget>[
+                Container(
+                  height: 500,
+                  child: Image(
+                    image: AssetImage("images/note.png"),// RD's Update
+                    fit: BoxFit.contain,
+                  ),
+                ),
                 CustomTextField(
                   editingController: _emailController,
                   isObscure: false,
@@ -55,17 +64,18 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     CustomRaisedButton(
-                      textLabel: "Signup",
+                      textLabel: "Sign up",
                       onPressedExecution: onSignup,
                     )
                   ],
                 ),
                 Text.rich(
                   TextSpan(
+                    style: TextStyle(color: Colors.black),// RD's Update
                     text: "Already have an account ? ",
                     children: [
                       TextSpan(
-                        text: 'Signin',
+                        text: 'Sign in',
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
                             Navigator.push(
@@ -77,7 +87,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             );
                           },
                         style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                            fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
                       ),
                     ],
                   ),
@@ -108,7 +118,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     if (!_formKey.currentState.validate()) {
       return;
     }
-    isRegistered = await AuthService.registerWithEmailAndPassword(_emailController.text, _passwordController.text);
+    isRegistered = await AuthService.registerWithEmailAndPassword(
+        _emailController.text, _passwordController.text);
     if (isRegistered) {
       await AuthService.sendEmailVerificationToRegisteredMail();
       Navigator.push(

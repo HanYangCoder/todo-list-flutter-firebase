@@ -30,8 +30,9 @@ class _EditTodoState extends State<EditTodo> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xFFf5d793),// RD's Update
         floatingActionButton: FloatingActionButton.extended(
-          backgroundColor: Colors.blue,
+          backgroundColor: Color(0xFFe6a8ba),// RD's Update
           label: Text("Add Task"),
           icon: Icon(Icons.add),
           onPressed: () {
@@ -48,6 +49,7 @@ class _EditTodoState extends State<EditTodo> {
           },
         ),
         appBar: AppBar(
+          backgroundColor: Colors.transparent,
           title: Text("Edit todo"),
           actions: [
             IconButton(

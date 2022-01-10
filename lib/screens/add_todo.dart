@@ -26,8 +26,9 @@ class _AddTodoState extends State<AddTodo> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xFFf5d793),
         floatingActionButton: FloatingActionButton.extended(
-          backgroundColor: Colors.blue,
+          backgroundColor: Color(0xFFe6a8ba),
           label: Text("Add Task"),
           icon: Icon(Icons.add),
           onPressed: () {
@@ -44,6 +45,7 @@ class _AddTodoState extends State<AddTodo> {
           },
         ),
         appBar: AppBar(
+          backgroundColor: Colors.transparent,
           title: Text("Add Todo"),
           actions: [
             IconButton(
